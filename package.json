@@ -1,50 +1,51 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
-  "dependencies": {
-    "bulma": "^0.8.0",
-    "gatsby": "^2.13.31",
-    "gatsby-image": "^2.0.23",
-    "gatsby-plugin-netlify": "^2.0.6",
-    "gatsby-plugin-netlify-cms": "^4.1.6",
-    "gatsby-plugin-purgecss": "^4.0.0",
-    "gatsby-plugin-react-helmet": "^3.0.4",
-    "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "^2.2.9",
-    "gatsby-remark-copy-linked-files": "^2.0.7",
-    "gatsby-remark-images": "^3.1.6",
-    "gatsby-remark-relative-images": "^0.3.0",
-    "gatsby-source-filesystem": "^2.0.26",
-    "gatsby-transformer-remark": "^2.6.9",
-    "gatsby-transformer-sharp": "^2.1.9",
-    "lodash": "^4.17.15",
-    "lodash-webpack-plugin": "^0.11.4",
-    "netlify-cms-app": "^2.9.6",
-    "netlify-cms-media-library-cloudinary": "^1.3.2",
-    "netlify-cms-media-library-uploadcare": "^0.5.2",
-    "node-sass": "^4.11.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^5.2.0",
-    "uuid": "^7.0.0"
+  "name": "juanmartin-site",
+  "version": "0.0.1",
+  "description": "based on solidstate gatsby starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmartin/juanmartin-gatsby.git"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
+  "author": {
+    "name": "Juan Martin",
+    "email": "juanmartinsesali@gmail.com"
+  },
+  "dependencies": {
+    "gatsby": "^2.20.2",
+    "gatsby-plugin-manifest": "^2.3.1",
+    "gatsby-plugin-offline": "^3.1.0",
+    "gatsby-plugin-react-helmet": "^3.2.0",
+    "gatsby-plugin-sass": "^2.2.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-images": "^1.1.0",
+    "react-scrollspy": "^3.4.2",
+    "smoothscroll-polyfill": "^0.4.4"
+  },
   "scripts": {
-    "clean": "gatsby clean",
-    "start": "npm run develop",
+    "develop": "gatsby develop",
     "build": "npm run clean && gatsby build",
-    "develop": "npm run clean && gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
+    "serve": "gatsby serve",
+    "clean": "rimraf .cache public",
+    "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.15.3"
-  }
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.17.0",
+    "rimraf": "^3.0.2"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-starter-solidstate"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anubhavsrivastava/gatsby-starter-solidstate/issues"
+  },
+  "homepage": "https://github.com/anubhavsrivastava/gatsby-starter-solidstate#readme"
 }

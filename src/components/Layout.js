@@ -1,58 +1,75 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-  return (
-    <div>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+import '../assets/sass/main.scss';
+import Footer from './Footer';
+import SideBar from './Sidebar';
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
-          sizes="16x16"
-        />
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isPreloaded: true,
+    };
+  }
 
-        <link
-          rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
+  componentDidMount() {
+    this.timeoutId = setTimeout(() => {
+      this.setState({ isPreloaded: false });
+    }, 100);
+  }
 
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta
-          property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
-        />
-      </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
-  )
+  componentWillUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+
+  render() {
+    const { children, fullMenu } = this.props;
+    const { isPreloaded } = this.state;
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `}
+        render={data => (
+          <>
+            <Helmet
+              title={data.site.siteMetadata.title}
+              meta={[
+                { name: 'description', content: 'Solid State' },
+                { name: 'keywords', content: 'site, web' },
+              ]}
+            >
+              <html lang="en" />
+            </Helmet>
+            <div
+              className={isPreloaded ? ' main-body  is-preload' : ' main-body'}
+            >
+              <div id="page-wrapper">
+                <SideBar fullMenu={fullMenu} />
+                {children}
+                <Footer />
+              </div>
+            </div>
+          </>
+        )}
+      />
+    );
+  }
 }
 
-export default TemplateWrapper
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;
