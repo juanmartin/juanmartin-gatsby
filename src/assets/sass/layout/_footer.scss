@@ -31,7 +31,7 @@
     .copyright {
       border-top: solid 2px _palette(border);
       list-style: none;
-      margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
+      // margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
       padding: _size(element-margin) 0 0 0;
       width: 100%;
 
@@ -66,7 +66,7 @@
         transparentize(_palette(bg), 0.2),
         transparentize(_palette(bg), 0.2)
       ),
-      url('../images/bg.jpg');
+      url('../images/bg2.jpg');
 
     background-size: auto, cover;
 
@@ -96,7 +96,7 @@
       }
 
       .copyright {
-        margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
+        // margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
       }
     }
   }

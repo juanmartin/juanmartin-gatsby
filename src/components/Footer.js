@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <section id="footer">
       <div className="inner">
-        <h2 className="major">Ponete en contacto</h2>
-        <p>
+        <h2 className="major">PEGAME UN TUBAZO DIGITAL // GET IN TOUCH</h2>
+        {/* <p>
           Mandame un mail.
-        </p>
+        </p> */}
         {/* <form method="post" action="/#">
           <div className="fields">
             <div className="field">
@@ -30,15 +30,15 @@ export default function Footer() {
           </ul>
         </form> */}
         <ul className="contact">
-          <li className="fa-home">{config.address}</li>
+          {/* <li className="fa-home">{config.address}</li> */}
 
-          <li className="fa-phone">{config.phone}</li>
+          {/* <li className="fa-phone">{config.phone}</li> */}
 
           {config.socialLinks.map(social => {
-            const { icon, url } = social;
+            const { icon, url, text } = social;
             return (
               <li className={`${icon}`} key={url}>
-                <a href={url}>{url}</a>
+                <a href={url}>{text}</a>
               </li>
             );
           })}

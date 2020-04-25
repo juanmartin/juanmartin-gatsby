@@ -14,5 +14,6 @@ exports.createPages = ({ actions }) => {
       toPath: `/in`,
       redirectInBrowser: true,
       isPermanent: true,
+      force: true
     })
   }

@@ -21,5 +21,12 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src: 'src/js/pointStream.js',
+        
+      },
+    },
   ],
 };

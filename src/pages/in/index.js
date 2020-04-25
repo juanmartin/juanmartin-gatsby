@@ -1,16 +1,17 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
-import pic1 from '../assets/images/pic01.jpg';
-import pic2 from '../assets/images/pic02.jpg';
-import pic3 from '../assets/images/pic03.jpg';
-import pic4 from '../assets/images/pic04.jpg';
-import pic5 from '../assets/images/pic05.jpg';
-import pic6 from '../assets/images/pic06.jpg';
-import pic7 from '../assets/images/pic07.jpg';
+import pic1 from '../../assets/images/pic01.jpg';
+import pic2 from '../../assets/images/pic02.jpg';
+import pic3 from '../../assets/images/pic03.jpg';
+import pic4 from '../../assets/images/pic04.jpg';
+import pic5 from '../../assets/images/pic05.jpg';
+import pic6 from '../../assets/images/pic06.jpg';
+import pic7 from '../../assets/images/pic07.jpg';
 
-import config from '../../config';
+import config from '../../../config';
+
 const IndexPage = () => (
   <Layout>
     <section id="banner">
@@ -18,41 +19,56 @@ const IndexPage = () => (
         <div className="logo">
           <span className="icon fa-child"></span>
         </div>
-        <h2>{config.heading}</h2>
-        <p>{config.subHeading}</p>
+        {/* <h2>{config.heading}</h2> */}
+        <h2>Juan Martín<br class="mobile-break" /> Sesali Maydana</h2>
+        <p><span class="ingles">Full time freelancer.</span> Produzco música y resuelvo cosas. <span class="ingles">Tinker, music producer.</span></p>
       </div>
     </section>
 
     <section id="wrapper">
       <section id="one" className="wrapper spotlight style1">
         <div className="inner">
-          <a href="/#" className="image">
+          <a className="image">
             <img src={pic1} alt="" />
           </a>
           <div className="content">
-            <h2 className="major">Soy músico</h2>
-            <p>
-              Produzco mis discos y algunos de otrxs. Toco en una banda.
-            </p>
-            <a href="/#" className="special">
-              Quiero escuchar
-            </a>
+            <h2 className="major">Music</h2>
+            <p>Produzco música. Toco en una banda. <br class="mobile-break" /> <span class="ingles">I produce music and play in a band.</span></p>
+            <ul style={{ marginBottom: -8, marginTop: -10, display: 'flex', justifyContent: 'flex-end', listStyle: 'none' }}>
+              <li>
+                <h3>MAY NADA</h3>
+                <ul className="icons">
+                  <li><a href="https://open.spotify.com/artist/171PrQcg6CjUbkWpYLYyMH?si=0LvMaa10SMS6hIeThpSmHw" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
+                  <li><a href="https://maynada.bandcamp.com/" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
+                  <li><a href="https://soundcloud.com/sesali" className="icon fa-soundcloud" target="_blank"><span className="label">Soundcloud</span></a></li>
+                </ul>
+              </li>
+              <li style={{paddingLeft: 70}}>
+                <h3>LUMENS</h3>
+                <ul className="icons">
+                  <li><a href="https://open.spotify.com/artist/2UVpLOvrgkWZeYLLwrgrnj?si=4sWpevRgRFCU0yhjTcga2w" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
+                  <li><a href="https://lumenslumens.bandcamp.com/releases" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
+                </ul>
+              </li>
+            </ul>
+
           </div>
         </div>
       </section>
 
       <section id="two" className="wrapper alt spotlight style2">
         <div className="inner">
-          <a href="/#" className="image">
+          <a className="image">
             <img src={pic2} alt="" />
           </a>
           <div className="content">
-            <h2 className="major">Soy un nerd</h2>
+            <h2 className="major">N3RD</h2>
             <p>
-              Invento cosas usando tecnologías diversas. Desde conectar cables hasta armar sistemas a medida. Programo en varios lenguajes y sé soldar circuitos electrónicos.
+              Armo cosas usando diversas tecnologías. Desde conectar cables hasta armar sistemas a medida. <br />
+              <span class="ingles">I create things using different techs. From connecting cables to building ad-hoc systems.</span>
             </p>
             <a href="/#" className="special">
-              Qué cosas?
+              <span class="ingles">WHAT</span> cosas?
             </a>
           </div>
         </div>
@@ -60,22 +76,23 @@ const IndexPage = () => (
 
       <section id="three" className="wrapper spotlight style3">
         <div className="inner">
-          <a href="/#" className="image">
+          <a className="image">
             <img src={pic3} alt="" />
           </a>
           <div className="content">
             <h2 className="major">Diseño</h2>
             <p>
-              Trabajé como diseñador gráfico durante muchos años. Al mismo tiempo diseñé y puse en marcha varios sitios web.
+              Trabajé como diseñador gráfico durante muchos años. También puse en marcha varios sitios web. <br />
+              <span class="ingles">I've worked as a graphic designer for many years. I've also built several websites</span>
             </p>
             <a href="/#" className="special">
-              Quiero ver!
+              A ver!? <span class="ingles">CHECK IT</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section id="four" className="wrapper alt style1">
+      {/* <section id="four" className="wrapper alt style1">
         <div className="inner">
           <h2 className="major">Proyectos</h2>
           <p>
@@ -83,7 +100,7 @@ const IndexPage = () => (
           </p>
           <section className="features">
             <article>
-              <a href="/#" className="image">
+              <a className="image">
                 <img src={pic4} alt="" />
               </a>
               <h3 className="major">Sed feugiat lorem</h3>
@@ -143,7 +160,7 @@ const IndexPage = () => (
             </li>
           </ul>
         </div>
-      </section>
+      </section> */}
     </section>
   </Layout>
 );
