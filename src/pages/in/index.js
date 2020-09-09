@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Typed from 'typed.js';
 
 import Layout from '../../components/Layout';
 
@@ -12,91 +13,114 @@ import pic7 from '../../assets/images/pic07.jpg';
 
 import config from '../../../config';
 
-const IndexPage = () => (
-  <Layout>
-    <section id="banner">
-      <div className="inner">
-        <div className="logo">
-          <span className="icon fa-child"></span>
-        </div>
-        {/* <h2>{config.heading}</h2> */}
-        <h2>Juan Martín<br class="mobile-break" /> Sesali Maydana</h2>
-        <p><span class="ingles">Full time freelancer.</span> Produzco música y resuelvo cosas. <span class="ingles">Tinker, music producer.</span></p>
-      </div>
-    </section>
 
-    <section id="wrapper">
-      <section id="one" className="wrapper spotlight style1">
+
+
+const IndexPage = () => {
+
+  useEffect(() => {
+    const typedOpts = {
+      strings: ['Juanm.art/in ', 'Juan Martin '],
+      typeSpeed: 80,
+      backSpeed: 80,
+      startDelay: 800,
+      backDelay: 1000,
+      smartBackspace: true,
+      showCursor: false
+    };
+    const tipi = new Typed('.nombreTipeado', typedOpts)
+    console.log('pasando tipi')
+    return () => {
+      tipi.destroy();
+      console.log('destruido')
+    };
+  }, []
+  )
+  return (
+    <Layout>
+      <section id="banner">
         <div className="inner">
-          <a className="image">
-            <img src={pic1} alt="" />
-          </a>
-          <div className="content">
-            <h2 className="major">Music</h2>
-            <p>Produzco música. Toco en una banda. <br class="mobile-break" /> <span class="ingles">I produce music and play in a band.</span></p>
-            <ul style={{ marginBottom: -8, marginTop: -10, display: 'flex', justifyContent: 'flex-end', listStyle: 'none' }}>
-              <li>
-                <h3>MAY NADA</h3>
-                <ul className="icons">
-                  <li><a href="https://open.spotify.com/artist/171PrQcg6CjUbkWpYLYyMH?si=0LvMaa10SMS6hIeThpSmHw" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
-                  <li><a href="https://maynada.bandcamp.com/" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
-                  <li><a href="https://soundcloud.com/sesali" className="icon fa-soundcloud" target="_blank"><span className="label">Soundcloud</span></a></li>
-                </ul>
-              </li>
-              <li style={{paddingLeft: 70}}>
-                <h3>LUMENS</h3>
-                <ul className="icons">
-                  <li><a href="https://open.spotify.com/artist/2UVpLOvrgkWZeYLLwrgrnj?si=4sWpevRgRFCU0yhjTcga2w" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
-                  <li><a href="https://lumenslumens.bandcamp.com/releases" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
-                </ul>
-              </li>
-            </ul>
-
+          <div className="logo">
+            <span className="icon fa-child"></span>
           </div>
+          {/* <h2>{config.heading}</h2> */}
+          <h2><span className="nombreTipeado"></span><br className="mobile-break" /> Sesali Maydana</h2>
+          <p><span className="ingles">Freelancer.</span> Music. <span className="ingles">Tech tinker.</span></p>
         </div>
       </section>
 
-      <section id="two" className="wrapper alt spotlight style2">
-        <div className="inner">
-          <a className="image">
-            <img src={pic2} alt="" />
-          </a>
-          <div className="content">
-            <h2 className="major">N3RD</h2>
-            <p>
-              Armo cosas usando diversas tecnologías. Desde conectar cables hasta armar sistemas a medida. <br />
-              <span class="ingles">I create things using different techs. From connecting cables to building ad-hoc systems.</span>
-            </p>
-            <a href="/#" className="special">
-              <span class="ingles">WHAT</span> cosas?
+      <section id="wrapper">
+        <section id="one" className="wrapper spotlight style1">
+          <div className="inner">
+            <a className="image">
+              <img src={pic1} alt="" />
             </a>
-          </div>
-        </div>
-      </section>
+            <div className="content">
+              <h2 className="major">Music</h2>
+              <p>Produzco música. Toco en una banda. <br className="mobile-break" /> <span className="ingles">I produce music and play in a band.</span></p>
+              <ul style={{ marginBottom: -8, marginTop: -10, display: 'flex', justifyContent: 'flex-end', listStyle: 'none' }}>
+                <li>
+                  <h3>MAY NADA</h3>
+                  <ul className="icons">
+                    <li><a href="https://open.spotify.com/artist/171PrQcg6CjUbkWpYLYyMH?si=0LvMaa10SMS6hIeThpSmHw" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
+                    <li><a href="https://maynada.bandcamp.com/" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
+                    <li><a href="https://soundcloud.com/sesali" className="icon fa-soundcloud" target="_blank"><span className="label">Soundcloud</span></a></li>
+                  </ul>
+                </li>
+                <li style={{ paddingLeft: 70 }}>
+                  <h3>LUMENS</h3>
+                  <ul className="icons">
+                    <li><a href="https://open.spotify.com/artist/2UVpLOvrgkWZeYLLwrgrnj?si=4sWpevRgRFCU0yhjTcga2w" className="icon fa-spotify" target="_blank"><span className="label">Spotify</span></a></li>
+                    <li><a href="https://lumenslumens.bandcamp.com/releases" className="icon fa-bandcamp" target="_blank"><span className="label">Bandcamp</span></a></li>
+                  </ul>
+                </li>
+              </ul>
 
-      <section id="three" className="wrapper spotlight style3">
-        <div className="inner">
-          <a className="image">
-            <img src={pic3} alt="" />
-          </a>
-          <div className="content">
-            <h2 className="major">Diseño</h2>
-            <p>
-              Trabajé como diseñador gráfico durante muchos años. También puse en marcha varios sitios web. <br />
-              <span class="ingles">I've worked as a graphic designer for many years. I've also built several websites</span>
-            </p>
-            <a href="/#" className="special">
-              A ver!? <span class="ingles">CHECK IT</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="two" className="wrapper alt spotlight style2">
+          <div className="inner">
+            <a className="image">
+              <img src={pic2} alt="" />
             </a>
+            <div className="content">
+              <h2 className="major">N3RD</h2>
+              <p>
+                Desarrollo soluciones tecnológicas. Desde su electrónica hasta su software.<br />
+                <span className="ingles">I develop solutions using whatever technology is needed. Hardware and software.</span>
+              </p>
+              <a href="/#" className="special">
+                <span className="ingles">WHAT</span> cosas?
+            </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* <section id="four" className="wrapper alt style1">
+        <section id="three" className="wrapper spotlight style3">
+          <div className="inner">
+            <a className="image">
+              <img src={pic3} alt="" />
+            </a>
+            <div className="content">
+              <h2 className="major">Diseño</h2>
+              <p>
+                Trabajé como diseñador gráfico durante muchos años. También puse en marcha varios sitios web. <br />
+                <span className="ingles">I've worked as a graphic designer for many years. I've also built several websites.</span>
+              </p>
+              <a href="/#" className="special">
+                A ver!? <span className="ingles">CHECK IT</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* <section id="four" className="wrapper alt style1">
         <div className="inner">
-          <h2 className="major">Proyectos</h2>
+          <h2 className="major">Blog</h2>
           <p>
-            Algunos proyectos que realicé se pueden ver a continuación.
+            Aventuras, pensamientos. <span className="ingles">Thoughts and adventures.</span>
           </p>
           <section className="features">
             <article>
@@ -161,8 +185,8 @@ const IndexPage = () => (
           </ul>
         </div>
       </section> */}
-    </section>
-  </Layout>
-);
-
+      </section>
+    </Layout>
+  );
+};
 export default IndexPage;
