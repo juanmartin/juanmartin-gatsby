@@ -1,3 +1,3 @@
-## repo de mi sitio
+# https://juanm.art/in
 
 Basado en solidstate gatsby starter.

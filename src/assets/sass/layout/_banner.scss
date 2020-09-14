@@ -9,6 +9,9 @@
 #banner {
   @include padding(10em, 0, (0, 0, _size(wrapper-edges, large) * -0.5, 0));
 
+  min-height: 100vh;
+  padding-top: 30vh !important;
+
   .inner {
     margin: 0 auto;
     width: _size(inner);
@@ -85,9 +88,9 @@
   }
 
   @include breakpoint('<=medium') {
-    @include padding(12em, 3em, (0, 0, _size(wrapper-edges, medium) * 0.5, 0));
+    @include padding(22em, 3em, (0, 0, _size(wrapper-edges, medium) * 0.5, 0));
 
-    margin-bottom: (_size(wrapper-edges, medium) * -2);
+    margin-bottom: (_size(wrapper-edges, medium) * -1);
 
     .inner {
       width: 100%;
@@ -95,7 +98,7 @@
   }
 
   @include breakpoint('<=small') {
-    @include padding(5em, 2em, (0, 0, _size(wrapper-edges, small) * 0.5, 0));
+    @include padding(12em, 2em, (0, 0, _size(wrapper-edges, small) * 0.5, 0));
 
     margin-bottom: (_size(wrapper-edges, small) * -1);
 

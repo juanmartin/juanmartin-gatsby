@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Juan Martin', // <title>
+  siteTitle: 'Juan Martin SM', // <title>
   manifestName: 'juanmartin',
   manifestShortName: 'juanmartin', // max 12 characters
   manifestStartUrl: '/',

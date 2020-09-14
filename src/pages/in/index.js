@@ -29,10 +29,8 @@ const IndexPage = () => {
       showCursor: false
     };
     const tipi = new Typed('.nombreTipeado', typedOpts)
-    console.log('pasando tipi')
     return () => {
       tipi.destroy();
-      console.log('destruido')
     };
   }, []
   )
@@ -45,7 +43,7 @@ const IndexPage = () => {
           </div>
           {/* <h2>{config.heading}</h2> */}
           <h2><span className="nombreTipeado"></span><br className="mobile-break" /> Sesali Maydana</h2>
-          <p><span className="ingles">Freelancer.</span> Music. <span className="ingles">Tech tinker.</span></p>
+          <p><span className="ingles">Tech tinker.</span> Music. <span className="ingles">Freelancer.</span></p>
         </div>
       </section>
 
@@ -106,7 +104,7 @@ const IndexPage = () => {
             <div className="content">
               <h2 className="major">Diseño</h2>
               <p>
-                Trabajé como diseñador gráfico durante muchos años. También puse en marcha varios sitios web. <br />
+                Trabajé como diseñador gráfico. También puse en marcha varios sitios web. <br />
                 <span className="ingles">I've worked as a graphic designer for many years. I've also built several websites.</span>
               </p>
               <a href="/#" className="special">
@@ -116,75 +114,90 @@ const IndexPage = () => {
           </div>
         </section>
 
-        {/* <section id="four" className="wrapper alt style1">
-        <div className="inner">
-          <h2 className="major">Blog</h2>
-          <p>
-            Aventuras, pensamientos. <span className="ingles">Thoughts and adventures.</span>
-          </p>
-          <section className="features">
-            <article>
-              <a className="image">
-                <img src={pic4} alt="" />
-              </a>
-              <h3 className="major">Sed feugiat lorem</h3>
+        <section id="four" className="wrapper alt spotlight style4">
+          <div className="inner">
+            <a className="image">
+              <img src={pic4} alt="" />
+            </a>
+            <div className="content">
+              <h2 className="major">Academia</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
+                Estudié Ing. en Informática (ITBA/UADE) y estoy terminado la Lic. en Artes Electrónicas (UNTREF) donde fui becario de un <a href="https://intercambiostransorganicos.org/" target="_blank" title="Intercambios Transorgánicos" rel="noopener noreferrer">proyecto de investigación</a>.<br />
+                <span className="ingles">I studied IT Engineering and I'm about to achieve my Electronic Arts degree. I've been part of a <a href="https://intercambiostransorganicos.org/" target="_blank" title="Intercambios Transorgánicos" rel="noopener noreferrer">research team</a> (MUNTREF Arte y Ciencia).</span>
               </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic5} alt="" />
-              </a>
-              <h3 className="major">Nisl placerat</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
+            </div>
+          </div>
+        </section>
+{/* 
+        <section id="five" className="wrapper style1">
+          <div className="inner">
+            <h2 className="major">Blog</h2>
+            <p>
+              Aventuras, pensamientos. <span className="ingles">Thoughts and adventures.</span>
+            </p>
+            <section className="features">
+              <article>
+                <a className="image">
+                  <img src={pic4} alt="" />
+                </a>
+                <h3 className="major">Sed feugiat lorem</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
               </p>
-              <a href="/#" className="special">
-                Learn more
+                <a href="/#" className="special">
+                  Learn more
               </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic6} alt="" />
-              </a>
-              <h3 className="major">Ante fermentum</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic5} alt="" />
+                </a>
+                <h3 className="major">Nisl placerat</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
               </p>
-              <a href="/#" className="special">
-                Learn more
+                <a href="/#" className="special">
+                  Learn more
               </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic7} alt="" />
-              </a>
-              <h3 className="major">Fusce consequat</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic6} alt="" />
+                </a>
+                <h3 className="major">Ante fermentum</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
               </p>
-              <a href="/#" className="special">
-                Learn more
+                <a href="/#" className="special">
+                  Learn more
               </a>
-            </article>
-          </section>
-          <ul className="actions">
-            <li>
-              <a href="/#" className="button">
-                Browse All
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic7} alt="" />
+                </a>
+                <h3 className="major">Fusce consequat</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
+              </p>
+                <a href="/#" className="special">
+                  Learn more
               </a>
-            </li>
-          </ul>
-        </div>
-      </section> */}
+              </article>
+            </section>
+            <ul className="actions">
+              <li>
+                <a href="/#" className="button">
+                  Browse All
+              </a>
+              </li>
+            </ul>
+          </div>
+        </section> */}
       </section>
     </Layout>
   );
