@@ -10,6 +10,7 @@ import pic4 from '../../assets/images/pic04.jpg';
 import pic5 from '../../assets/images/pic05.jpg';
 import pic6 from '../../assets/images/pic06.jpg';
 import pic7 from '../../assets/images/pic07.jpg';
+import logoPic from '../../assets/img/jmlogo.png';
 
 import config from '../../../config';
 
@@ -39,11 +40,14 @@ const IndexPage = () => {
       <section id="banner">
         <div className="inner">
           <div className="logo">
-            <span className="icon fa-child"></span>
+            {/* <span className="icon fa-child"></span> */}
+            <img src={logoPic} width='120vmin' />
           </div>
-          {/* <h2>{config.heading}</h2> */}
-          <h2><span className="nombreTipeado"></span><br className="mobile-break" /> Sesali Maydana</h2>
-          <p><span className="ingles">Tech tinker.</span> Music. <span className="ingles">Freelancer.</span></p>
+          <div className="inner">
+            {/* <h2>{config.heading}</h2> */}
+            <h2><span className="nombreTipeado"></span><br className="mobile-break" /> Sesali Maydana</h2>
+            <p><span className="ingles">Tech tinker.</span> Music. <span className="ingles">Freelancer.</span></p>
+          </div>
         </div>
       </section>
 
@@ -128,7 +132,7 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-{/* 
+        {/* 
         <section id="five" className="wrapper style1">
           <div className="inner">
             <h2 className="major">Blog</h2>
